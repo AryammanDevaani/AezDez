@@ -82,21 +82,11 @@
     }
 
     .coming-soon {
-      display: none;
       font-size: 1.5rem;
       font-weight: 700;
       color: var(--accent);
       margin-top: 4rem;
-    }
-
-    @media (max-width: 768px) {
-      .games-grid {
-        display: none;
-      }
-
-      .coming-soon {
-        display: block;
-      }
+      display: none;
     }
   </style>
 </head>
@@ -111,11 +101,18 @@
         “I’ve played this game before,” shut the fuck up!
       </div>
     </div>
-
-    <!-- More games can be added here as more .game-card blocks -->
+    <!-- Add more .game-card blocks here -->
   </div>
 
   <div class="coming-soon">Coming soon on mobile.</div>
+
+  <script>
+    const isMobileOrTablet = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    if (isMobileOrTablet) {
+      document.querySelector('.games-grid').style.display = 'none';
+      document.querySelector('.coming-soon').style.display = 'block';
+    }
+  </script>
 </body>
 
 </html>
