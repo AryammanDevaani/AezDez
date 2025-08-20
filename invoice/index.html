@@ -16,21 +16,24 @@
 
         body {
             font-family: 'SF Pro', 'Inter', sans-serif;
+            background: #1a1a1a;
+            color: #e0e0e0;
         }
 
         h1 {
             font-family: 'SF Pro', 'Inter', sans-serif;
             text-align: center;
+            color: #ffffff;
         }
 
         .form-section {
-            background: #ffffff;
+            background: #2a2a2a;
             padding: 30px;
             margin: auto;
             max-width: 900px;
             border-radius: 16px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         label {
@@ -38,7 +41,7 @@
             font-weight: 600;
             display: block;
             margin-top: 15px;
-            color: #2c3e50;
+            color: #d0d0d0;
             font-size: 14px;
             letter-spacing: 0.2px;
         }
@@ -50,10 +53,11 @@
             width: 100%;
             padding: 12px;
             margin-top: 6px;
-            border: 1px solid #d1d5db;
+            border: 1px solid #4a4a4a;
             border-radius: 8px;
             font-size: 16px;
-            background: #f8fafc;
+            background: #333333;
+            color: #e0e0e0;
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -61,13 +65,13 @@
         select:focus,
         textarea:focus {
             outline: none;
-            border-color: #4b5ef5;
-            box-shadow: 0 0 0 3px rgba(75, 94, 245, 0.2);
+            border-color: #5c6bc0;
+            box-shadow: 0 0 0 3px rgba(92, 107, 192, 0.3);
         }
 
         button {
             font-family: 'SF Pro', 'Inter', sans-serif;
-            background: linear-gradient(135deg, #4b5ef5 0%, #3b46c4 100%);
+            background: rgb(64, 63, 63);
             color: white;
             border: none;
             padding: 14px 24px;
@@ -83,45 +87,42 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
-            box-shadow: 0 6px 20px rgba(75, 94, 245, 0.3);
             touch-action: manipulation;
         }
 
         button:hover {
-            background: linear-gradient(135deg, #3b46c4 0%, #4b5ef5 100%);
+            background: gray;
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(75, 94, 245, 0.4);
         }
 
         button:active {
             transform: translateY(0);
-            box-shadow: 0 4px 15px rgba(75, 94, 245, 0.2);
         }
 
         .dubbing-row {
-            border: 1px solid #e5e7eb;
+            border: 1px solid #4a4a4a;
             border-radius: 12px;
             padding: 20px;
             margin-top: 20px;
-            background: #f9fafb;
+            background: #333333;
             transition: background 0.2s ease;
         }
 
         .dubbing-row:hover {
-            background: #f1f5f9;
+            background: #333333;
         }
 
         .dubbing-row:nth-child(even) {
-            background: #f3f4f6;
+            background: #333333;
         }
 
         .dubbing-row:nth-child(even):hover {
-            background: #eceff1;
+            background: #333333;
         }
 
         .deleteBtn {
             font-family: 'SF Pro', 'Inter', sans-serif;
-            background: linear-gradient(135deg, #e3342f 0%, #cc1f1a 100%);
+            background:rgb(108, 6, 6);
             color: white;
             border: none;
             padding: 10px 20px;
@@ -131,7 +132,6 @@
             font-weight: 600;
             letter-spacing: 0.5px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(227, 52, 47, 0.3);
             display: block;
             width: 100%;
             max-width: 140px;
@@ -140,35 +140,33 @@
         }
 
         .deleteBtn:hover {
-            background: linear-gradient(135deg, #cc1f1a 0%, #e3342f 100%);
+            background: rgb(143, 23, 2);
             transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(227, 52, 47, 0.4);
         }
 
         .deleteBtn:active {
             transform: translateY(0);
-            box-shadow: 0 2px 10px rgba(227, 52, 47, 0.2);
         }
 
         .client-details {
-            border: 1px solid #e5e7eb;
+            border: 1px solid #4a4a4a;
             border-radius: 12px;
             padding: 20px;
             margin-top: 20px;
-            background: #f9fafb;
+            background: #333333;
             transition: background 0.2s ease;
         }
 
         .client-details:hover {
-            background: #f1f5f9;
+            background: #333333;
         }
 
         .client-details:nth-child(even) {
-            background: #f3f4f6;
+            background: #333333;
         }
 
         .client-details:nth-child(even):hover {
-            background: #eceff1;
+            background: #333333;
         }
 
         /* ===== Invoice (captured to PDF) ===== */
@@ -351,23 +349,23 @@
     <div class="form-section">
         <h3>client details</h3>
         <div class="client-details">
-            <label>choose client</label>
+            <label>choose client (optional)</label>
             <select id="clientSelect" onchange="fillClientData()">
                 <option value="new">new client</option>
                 <option value="subhash">Subhash Studios Private Limited</option>
             </select>
 
-            <label>client name</label>
+            <label>name</label>
             <input id="clientName">
-            <label>client contact</label>
+            <label>contact number</label>
             <input type="number" id="clientContact">
-            <label>client address</label>
+            <label>address</label>
             <textarea id="clientAddress"></textarea>
-            <label>client GSTIN</label>
+            <label>GSTIN</label>
             <input id="clientGST">
         </div>
 
-        <h3>dubbing work</h3>
+        <h3>project details</h3>
         <div id="dubbingRows"></div>
         <button type="button" onclick="addRow()">add dub</button>
 
@@ -399,11 +397,11 @@
         <table>
             <thead>
                 <tr>
-                    <th>Dubbing Date</th>
+                    <th>Date</th>
                     <th>Series/Movie</th>
-                    <th>Characters</th>
+                    <th>Character(s)</th>
                     <th>Director</th>
-                    <th>Episodes</th>
+                    <th>Episode(s)</th>
                     <th>Amount (₹)</th>
                 </tr>
             </thead>
@@ -457,15 +455,15 @@
             const row = document.createElement("div");
             row.classList.add("dubbing-row");
             row.innerHTML = `
-                <label>dubbing date <span style="color:red">*</span></label>
+                <label>date <span style="color:red">*</span></label>
                 <input type="date" class="dubDate" required>
-                <label>series/movie name</label>
+                <label>series/movie’s name</label>
                 <input class="seriesName">
-                <label>characters voiced</label>
+                <label>character(s) voiced</label>
                 <input class="characters">
-                <label>dubbing director</label>
+                <label>director</label>
                 <input class="director">
-                <label>episode numbers</label>
+                <label>episode(s)</label>
                 <input class="episodes">
                 <label>amount (₹)</label>
                 <input type="number" class="amount">
@@ -492,7 +490,7 @@
             for (let r of rows) {
                 const dateEl = r.querySelector(".dubDate");
                 if (!dateEl.value.trim()) {
-                    alert("All dubbing rows must have a date filled in.");
+                    alert("All projects must have a date filled in.");
                     return false;
                 }
                 const date = new Date(dateEl.value).toLocaleDateString("en-GB", {
